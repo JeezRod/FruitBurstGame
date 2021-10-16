@@ -9,8 +9,8 @@ namespace FruitBurstBackend
         public int Points{get {return rand.Next(1,6);}}
 
         public bool IsVisible{
-                get {return IsVisible;}
-                set{IsVisible = false;}
+                get {return false;}
+                set{IsVisible = value;}
             }
 
         public void MakeVisible(){
