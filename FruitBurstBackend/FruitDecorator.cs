@@ -5,8 +5,8 @@ namespace FruitBurstBackend
     public abstract class FruitDecorator : IFruit{
         protected IFruit iFruit;
 
-        public FruitDecorator(IFruit iFruit){
-            this.iFruit = iFruit;
+        public FruitDecorator(IFruit ifruit){
+            iFruit = ifruit;
         }
 
         public virtual int Points{
@@ -14,7 +14,7 @@ namespace FruitBurstBackend
         }
 
         public virtual bool IsVisible{
-            get{return this.iFruit.IsVisible;} set{ this.iFruit.IsVisible = value;}
+            get{return this.iFruit.IsVisible;} set{this.iFruit.IsVisible = value;}
         }
 
         public virtual void MakeVisible(){
