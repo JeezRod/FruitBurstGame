@@ -25,7 +25,7 @@ namespace FruitBurstUnitTests
         [TestMethod]
         public void TestMagicFruitMakeInvisible()
         {
-            MagicFruit mgFruit = new MagicFruit(new Fruit());
+            IFruit mgFruit = new MagicFruit(new Fruit());
             mgFruit.IsVisible = true;
             mgFruit.MakeInvisible();
 
