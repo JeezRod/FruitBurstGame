@@ -58,7 +58,9 @@ namespace FruitBurst
             if(gameState.ScoreAndLevelCounter.Score >= maxScore){
                 Exit();
             }
-
+/*
+*   it shows a fruit every certaint time depending on the interval
+*/
 
             if(counter == interval){
                 gameState.MakeFruitsAppear();
@@ -66,14 +68,20 @@ namespace FruitBurst
             }
             counter++;
             timer++;
-
+/*
+*   the timer checks how long it has been running and when it reaches
+*   the value it divides it by 2 and increment the level of the game.
+*/
             if(timer == 1000){
                 interval /= 2;
                 timer = 0;
                 gameState.IncrementLevel();
             }
 
-
+/*
+*   takes the state of the mouse and check the possition of the fruit on screen
+*   once it is clicked it makes the fruit invisible and updates the score.
+*/
             previous = current;
             current = Mouse.GetState();
             if(current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released){
