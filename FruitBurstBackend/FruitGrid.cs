@@ -27,6 +27,8 @@ namespace FruitBurstBackend
 */      
         public FruitGrid(int height, int width){
             grid = new IFruit [height,width];
+            this.height = height;
+            this.width = width;
             GenerateGridFruits();
         }
 
@@ -62,6 +64,8 @@ namespace FruitBurstBackend
                         grid[i,j] = new MagicFruit(new Fruit());
                     }else if(randNum == 2){
                         grid[i,j] = new ExplodingFruit(new Fruit());
+                    }else if(randNum ==3){
+                        grid[i,j] = new ExplodingFruit(new MagicFruit(new Fruit()));
                     }
                     else{
                         grid[i,j] = new Fruit();
