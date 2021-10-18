@@ -15,7 +15,7 @@ namespace FruitBurst
         private ScoreSprite scoreSprite;
         private MouseState previous;
         private MouseState current;
-        private const int maxScore = 300;
+        private const int maxScore = 200;
 
         private const int rectan = 100;
         private int counter = 0;
@@ -33,8 +33,8 @@ namespace FruitBurst
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            _graphics.PreferredBackBufferHeight = 1000;
-            _graphics.PreferredBackBufferWidth = 1000;
+            _graphics.PreferredBackBufferHeight = 900;
+            _graphics.PreferredBackBufferWidth = 800;
             _graphics.ApplyChanges();
             gameState = new GameState(8,8);
             fruitGridSprite = new FruitGridSprite(this, gameState.Grid);
@@ -55,6 +55,11 @@ namespace FruitBurst
         {
             
             // TODO: Add your update logic here
+            if(gameState.ScoreAndLevelCounter.Score >= maxScore){
+                Exit();
+            }
+
+
             if(counter == interval){
                 gameState.MakeFruitsAppear();
                 counter = 0;
