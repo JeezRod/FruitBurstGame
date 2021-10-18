@@ -25,6 +25,7 @@ namespace FruitBurst
 
         protected override void LoadContent()
         {
+            spriteBatch = new SpriteBatch(GraphicsDevice);
             font = game.Content.Load<SpriteFont>("font");
             base.LoadContent();
         }
@@ -37,7 +38,7 @@ namespace FruitBurst
         public override void Draw(GameTime gameTime)
         {
             spriteBatch.Begin();
-            spriteBatch.DrawString(font, "My Text", new Vector2(5,800), Color.Black);
+            spriteBatch.DrawString(font, "Score: " + scoreAndLevel.Score + " Level: " + scoreAndLevel.Level, new Vector2(5,800), Color.Black);
             spriteBatch.End();
             base.Draw(gameTime);
         }
