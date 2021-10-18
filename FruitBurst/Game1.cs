@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using FruitBurstBackend;
 
 namespace FruitBurst
 {
@@ -8,6 +9,10 @@ namespace FruitBurst
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private GameState gameState;
+        private ScoreAndLevel scoreAndLevel;
+        private FruitGridSprite fruitGridSprite;
+        private ScoreSprite scoreSprite;
 
         public Game1()
         {
@@ -19,7 +24,15 @@ namespace FruitBurst
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            _graphics.PreferredBackBufferHeight = 1000;
+            _graphics.PreferredBackBufferWidth = 1000;
+            _graphics.ApplyChanges();
+            gameState = new GameState(8,8);
+            scoreAndLevel = new ScoreAndLevel();
+            fruitGridSprite = new FruitGridSprite(this, gameState.Grid);
+            scoreSprite = new ScoreSprite(this, scoreAndLevel);
+            Components.Add(fruitGridSprite);
+            Components.Add(scoreSprite);
             base.Initialize();
         }
 
