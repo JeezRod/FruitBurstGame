@@ -7,6 +7,17 @@ namespace FruitBurstBackend
         private IFruit[,] grid;
         private Random rand = new Random();
 
+        private int height;
+
+        private int width;
+
+        public int Height{
+            get{return height;}
+        }
+        
+        public int Width{
+            get{return width;}
+        }
 /**
 *   The constructor takes two parameters and initializes
 *   the array with the two values. then it uses the helper
