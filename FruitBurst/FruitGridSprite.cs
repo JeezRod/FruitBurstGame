@@ -40,7 +40,8 @@ namespace FruitBurst
         public override void Draw(GameTime gameTime)
         {
             spriteBatch.Begin();
-            for(int i=0; i< fruitGrid.Height; i ++){
+
+            for(int i=0; i< fruitGrid.Height; i++){
                 for(int j=0; j< fruitGrid.Width; j++){
                     if(fruitGrid.GetVisibilityAt(i,j)){
                         spriteBatch.Draw(fruitTexture, new Rectangle(i*100, j*100,100,100), Color.White);
