@@ -11,12 +11,16 @@ namespace FruitBurstUnitTests
         [TestMethod]
         public void TestMakeFruitAppear()
         {
-            GameState gs = new GameState(5, 5);
+            GameState gs = new GameState(2, 2);
             gs.MakeFruitsAppear();
+            gs.MakeFruitsAppear();
+            gs.MakeFruitsAppear();
+
             bool result = false;
-            for(int i =0; i<5; i++){
-                for(int j =0; j<5; j++){
+            for(int i =0; i<2; i++){
+                for(int j =0; j<2; j++){
                     if(gs.Grid[i,j].IsVisible == true){
+                        
                         result = true;
                     }
                 }
